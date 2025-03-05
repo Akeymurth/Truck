@@ -327,6 +327,21 @@ nav a {
 
 }
 
+@media screen and (max-width: 430px) {
+
+    .logo img {
+          width: 220px;
+          top: 110px;
+          left: 53%;
+
+    }
+
+    .contacto {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+}
+
 @media screen and (max-width: 425px) {
 
     .logo img {
@@ -338,10 +353,16 @@ nav a {
           z-index: 100;
     }
 
-    .contacto {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
-    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .logo img {
+        width: 200px;
+        top: 110px;
+        left: 44%;
+
+      }
 }
 
 @media screen and (max-width: 375px) {
