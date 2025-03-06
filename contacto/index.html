@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header class="header">
@@ -41,8 +43,9 @@
                 <input id="email" class="comment-form__field" name="email" type="text" placeholder="E-mail *" value="" size="30" aria-describedby="email-notes" aria-required='true' required='required' />
             </p>
             <p class="comment-form-url">
-                <input id="url" class="comment-form__field" name="phone" type="text" placeholder="Telefono *" value="" size="30" />
+                <input id="url" class="comment-form__field" name="phone" type="text" placeholder="Telefono *" value="" size="30" required='required' />
             </p>
+            <div class="g-recaptcha" data-sitekey="6LcSBOsqAAAAAF_v-qN8ivpcwc8WbP86LsXhhg1D" required='required'></div>
             <p class="form-submit">
                 <input name="submit" type="submit" id="submit" class="submit" value="Enviar" /> 
                 <input type='hidden' name='comment_post_ID' value='763' id='comment_post_ID' />
