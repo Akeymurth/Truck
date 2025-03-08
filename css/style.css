@@ -226,21 +226,26 @@ nav a {
     text-align: center;
     padding: 40px 20px;
     place-items: center;
+    background-color: black;
 }
 
-.contacto img{
+.logoBottom img{
     width: 250px;
     border: 2px solid white;
 }
 
-  
-.contacto-info {
+.contactoInfomacion{
     display: grid;
-    justify-self: center;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;    
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
 }
-  
+
+.contactoButton{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
 .contacto-item {
     background-color: #128C7E;
     padding: 15px 20px;
@@ -261,6 +266,26 @@ nav a {
     margin-right: 10px;
     font-size: 1.2em; /* Tamaño de los iconos */
 
+}
+
+.redes h2{
+    margin-bottom: 20px;
+}
+
+.redes-iconos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    cursor: pointer;
+}
+
+.redes a{
+    text-decoration: none;
+}
+
+.derechos {
+    text-align: left;    
+    padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -297,10 +322,8 @@ nav a {
     }
 
     .contacto-info {
-        grid-template-columns: repeat(1, 1fr);
-        
-    }
-    
+        grid-template-columns: repeat(1, 1fr);  
+    }    
 }
 
 
@@ -318,6 +341,14 @@ nav a {
 
     .banner {
         height: 700px;
+    }
+
+    .contactoButton{
+        grid-template-columns: 1fr;
+    }
+
+    .redes-iconos {
+        grid-template-columns: 1fr;
     }
 
 }
