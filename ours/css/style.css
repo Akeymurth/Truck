@@ -39,6 +39,10 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    color: #5D6E9E;
+}
+
 .header {
     width: 100%;
     position: relative;
