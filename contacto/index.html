@@ -52,6 +52,7 @@
                     <input id="url" class="comment-form__field" name="phone" type="text" placeholder="Telefono *" value="" size="30" required='required' />
                 </p>
                 <div class="g-recaptcha" data-sitekey="6LeZwCIrAAAAAK7lYM8WqiTzz5rdQOloaPMRRsNu" required='required'></div>
+                <div id="recaptcha-error" class="error-message">Por favor complete el reCAPTCHA antes de enviar el formulario.</div>
                 <p class="form-submit">
                     <input name="submit" type="submit" id="submit" class="submit" value="Enviar" /> 
                     <input type='hidden' name='comment_post_ID' value='763' id='comment_post_ID' />
@@ -102,5 +103,21 @@
         <p class="derechos">Todos los derechos reservados: Trucks Lights & Parts®.</p>
     </section>
     
+    <script>
+        function validateForm() {
+            // Verificar si el reCAPTCHA ha sido completado
+            var recaptchaResponse = grecaptcha.getResponse();
+            
+            if (recaptchaResponse.length === 0) {
+                // reCAPTCHA no completado
+                document.getElementById('recaptcha-error').style.display = 'block';
+                return false; // Detener el envío del formulario
+            } else {
+                // reCAPTCHA completado
+                document.getElementById('recaptcha-error').style.display = 'none';
+                return true; // Permitir el envío del formulario
+            }
+        }
+    </script>
 </body>
 </html>
