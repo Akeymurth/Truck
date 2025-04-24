@@ -104,20 +104,24 @@
     </section>
     
     <script>
-        function validateForm() {
-            // Verificar si el reCAPTCHA ha sido completado
-            var recaptchaResponse = grecaptcha.getResponse();
-            
-            if (recaptchaResponse.length === 0) {
-                // reCAPTCHA no completado
-                document.getElementById('recaptcha-error').style.display = 'block';
-                return false; // Detener el envío del formulario
-            } else {
-                // reCAPTCHA completado
-                document.getElementById('recaptcha-error').style.display = 'none';
-                return true; // Permitir el envío del formulario
-            }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('commentform');
+        const recaptchaContainer = form.querySelector('.g-recaptcha');
+        const recaptchaError = document.getElementById('recaptcha-error');
+
+        form.addEventListener('submit', function(event) {
+        const recaptchaResponse = grecaptcha && grecaptcha.getResponse();
+
+        if (!recaptchaResponse) {
+        event.preventDefault(); // Evita que el formulario se envíe
+        recaptchaError.style.display = 'block'; // Muestra el mensaje de error
+        } else {
+        recaptchaError.style.display = 'none'; // Oculta el mensaje de error si el reCAPTCHA está completo
         }
+        });
+        });
+        
     </script>
 </body>
 </html>
